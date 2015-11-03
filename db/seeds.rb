@@ -55,6 +55,9 @@ fake_tenants = Apartment.all.find_by(address: "456 Fake Street").tenants
 shrine = Apartment.create(address: "Hakurei Shrine", monthly_rent: 0, sqft: 20000, num_beds: 5, num_baths: 2)
 shrine.update(monthly_rent: 10000)
 
+nick = Tenant.find_by(name: "Nick Allen")
+nick.apartment = shrine;
+
 # Saves an object that you updated using attribute helpers to the Database
 shrine.save
 
